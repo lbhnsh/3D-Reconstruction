@@ -97,15 +97,37 @@ z=np.dot(wT,x) +b
 import numpy as np
 u=np.exp(v) #each element will be e^v
 u=np.log(v)
-u=np.abs(v)
+u=np.abs(v)>
 ```
 ## Vectorizing Logistic Regression
 ```
 	X=(nx,m)
-	z=np.dot(w.T,X) +b
-	A=[ a1 a2 .... am ] = sigmoid(z) 
+	Z=np.dot(w.T,X) +b
+	A=[ a1 a2 .... am ] = sigmoid(Z) 
 ```
  
 b is a real number but as it is added with matrix it converts itself into a 1d matrix [b b b... ] which is called **broadcasting**
 
+```
+	dz=a(i).y(i)
+	db= 1/m np.sum(dz)
+	dw= 1/m X dz(transpose)
+```
 
+**Without using any for loops:** Let ' be Transpose
+```
+
+Z=w'X+b	=np.dot(w.T,X) + b
+A=sigmoid(Z)
+dz=A-Y
+dw=1/m X dz'
+db=1/m np.sum(dz)
+w:=w- alpha dw
+b:=b- alpha db
+
+```
+
+## Broadcasting
+
+axis=0 (vertical direction)
+axis=1 (horizontal direction)
