@@ -50,7 +50,7 @@ i.e Y.shape=(1,m) )
 We use **Sigmoid** function for Logistic Regression
 ! [Sigmoid: ] (https://miro.medium.com/v2/resize:fit:640/format:webp/1*aQPjVStYupSRGtIsjq3adA.png)
 	
-	z= w + b
+	z= wx + b
 	
 ## Cost / Loss / Error function
  **For Logistic Regression**
@@ -58,4 +58,33 @@ We use **Sigmoid** function for Logistic Regression
 Loss(error) func:	L(y hat, y) = -(ylog (y hat) + (1-y)log (1 -y hat) )
 Cost func:	J(w, b)= Summation from 1 to m { 1/m L(y hat (i), y(i) ) } 
 
-Loss applies to single example, cost for overall
+Loss applies to single example, cost average of all
+
+## Gradient Descent
+
+To find w and b that minimize J(w,b)
+J is a convex function
+
+1. Choose a random point of initialization
+2. Finds Global optimum 
+3. Repeats w:= w - alpha [ dJ/ dw]
+   b:= b - alpha [ dJ/ db]  .... alpha= learning rate
+
+### Computation graph:
+One step of **backward** propagation on a computation graph yields derivative of final output variable.
+### Computing derivatives:
+	While coding the computing derivatives:
+	dJ/dv --> dv
+	dJ/da --> da where v and a are variables of previous step(s)
+Computing derivatives is easier RIGHT to LEFT
+
+### Logistic Regression Gradient Descent
+
+z= w1x1+w2x22+b
+dz=a-y		a=sigmoid(z)=y hat
+
+dw1=x1.dz 
+dw2=x2.dz
+->imp lect: (https://www.coursera.org/learn/neural-networks-deep-learning/lecture/udiAq/gradient-descent-on-m-examples)
+
+**Vectorization Techniques Avoid For Loops**
