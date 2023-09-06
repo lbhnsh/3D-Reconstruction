@@ -104,3 +104,5 @@ u=np.abs(v)>
 	Z=np.dot(w.T,X) +b
 	A=[ a1 a2 .... am ] = sigmoid(Z) > 
 b is a real number but as it is added with matrix it converts itself into a 1d matrix [b b b... ] which is called **broadcasting**
+
+	
