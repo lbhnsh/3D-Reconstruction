@@ -93,16 +93,19 @@ dw2=x2.dz
 z=np.dot(wT,x) +b 
 	*np.dot(wT,x)=wT x* 
 	
-	
-<import numpy as np
+```	
+import numpy as np
 u=np.exp(v) #each element will be e^v
 u=np.log(v)
-u=np.abs(v)>
-
+u=np.abs(v)
+```
 ## Vectorizing Logistic Regression
-	<X=(nx,m)
-	Z=np.dot(w.T,X) +b
-	A=[ a1 a2 .... am ] = sigmoid(Z) > 
+```
+	X=(nx,m)
+	z=np.dot(w.T,X) +b
+	A=[ a1 a2 .... am ] = sigmoid(z) 
+```
+ 
 b is a real number but as it is added with matrix it converts itself into a 1d matrix [b b b... ] which is called **broadcasting**
 
-	
+
