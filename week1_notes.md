@@ -58,7 +58,7 @@ We use **Sigmoid** function for Logistic Regression
 Loss(error) func:	L(y hat, y) = -(ylog (y hat) + (1-y)log (1 -y hat) )
 Cost func:	J(w, b)= Summation from 1 to m { 1/m L(y hat (i), y(i) ) } 
 
-Loss applies to single example, cost average of all
+Loss applies to single example, cost is average of all loss
 
 ## Gradient Descent
 
@@ -87,4 +87,20 @@ dw1=x1.dz
 dw2=x2.dz
 ->imp lect: (https://www.coursera.org/learn/neural-networks-deep-learning/lecture/udiAq/gradient-descent-on-m-examples)
 
-**Vectorization Techniques Avoid For Loops**
+**Vectorization Techniques Avoid For Loops (it is a faster method)**
+(numpy lib)
+
+z=np.dot(wT,x) +b 
+	*np.dot(wT,x)=wT x* 
+	
+	
+<import numpy as np
+u=np.exp(v) #each element will be e^v
+u=np.log(v)
+u=np.abs(v)>
+
+## Vectorizing Logistic Regression
+	<X=(nx,m)
+	Z=np.dot(w.T,X) +b
+	A=[ a1 a2 .... am ] = sigmoid(Z) > 
+b is a real number but as it is added with matrix it converts itself into a 1d matrix [b b b... ] which is called **broadcasting**
