@@ -168,5 +168,6 @@ a=max(0,z)
 
 #### Leaky ReLU
 a=max(0.001z,z)
+
 Sigmoid: Avoid using suitable for output layer only, tanh is a better alternative
 Most common ReLU, can try Leaky ReLU 
