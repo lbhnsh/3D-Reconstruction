@@ -128,6 +128,45 @@ b:=b- alpha db
 ```
 
 ## Broadcasting
-
+	when python automatically matches one dimension
 axis=0 (vertical direction)
 axis=1 (horizontal direction)
+
+## Neural Network Representation
+
+|INPUT layer | Hidden Layer | OUTPUT LAYER |
+|------------|--------------|--------------|
+|a^[0]=X     |a^[1]         |a^[2]         | 
+
+this is a 2 layer neural network
+
+Superscript is for layer number in square brackets
+Superscript is for taining example number in round brackets
+Subscript for node number in layer
+
+In one node there are two parts (considering logistic regression)
+. Left part calculates z=dot(w.T,x)+b and right part calculates sigmoid(z)
+
+
+|Given input x: | 	       |
+|---------------|--------------|
+|z^[1]=W^[1]x +b^[1]|a^[1]=sigmoid(z^[1])|
+|(4,1)  (4,3)(3,1)  (4,1)|(4,1)  (4,1)| 
+|z^[2]=W^[2]x +b^[2]|a^[2]=sigmoid(z^[2])|
+|(1,1)  (1,4)(4,1)  (1,1)|(1,1)  (1,1)|
+
+Stack for all training examples into vectors
+* using capital notation create vectors
+
+
+
+
+## Activation Functions:
+Sigmoid, tanh, ReLU
+##### ReLU: Rectified Linear Unit
+a=max(0,z) 
+
+#### Leaky ReLU
+a=max(0.001z,z)
+Sigmoid: Avoid using suitable for output layer only, tanh is a better alternative
+Most common ReLU, can try Leaky ReLU 
