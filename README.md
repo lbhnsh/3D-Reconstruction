@@ -1,7 +1,7 @@
 # 3D-Reconstruction
 3D Reconstruction from Single RGB Image
 
-#Neural Networks and Deep Learning course
+# Neural Networks and Deep Learning course
 # Week 1
 
 __Neural network__ is an interconnected web of a number of functions, where output from one function serves as input for next function, leading to a common output. Neural network can be viewed as a machine that takes data set as input and returns output after processing at multiple levels.
