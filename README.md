@@ -199,3 +199,85 @@ General Principle
 where op can be +,-,*,/
 
 
+# Week 3
+
+__One hidden layer NN__
+
+![NN with 1 hidden layer](https://www.researchgate.net/profile/Mahindra_Rautela/publication/345543651/figure/fig4/AS:955749647806465@1604879881326/Neural-networks-with-2-layers-1-hidden-layer.ppm)
+
+x1,x2 and x3 are input features. Input layer passes data into hidden layer
+Hidden layer is associated with parameters w and b and activation function
+Output is a single node layer
+
+z<sub>j</sub><sup>[i]</sup> = w<sub>j</sub><sup>T</sup>x<sup>[i]</sup> + b<sub>j</sub><sup>[i]</sup>
+a<sub>j</sub><sup>[i]</sup> = σ(z<sub>j</sub><sup>[i]</sup>)
+ where i = layer number and j = node number in that particular layer
+
+$Determination of dimensions$
+z<sub>j</sub><sup>[i]</sup> (4,1) = w<sub>j</sub><sup>T</sup> (4,3) * x(3,1) + b<sub>j</sub><sup>[i]</sup> (4,1)
+a<sub>j</sub><sup>[i]</sup> (4,1) = σ(z<sub>j</sub><sup>[i]</sup> (4,1))
+
+z<sub>j</sub><sup>[i]</sup> (1,1) = w<sub>j</sub><sup>T</sup> (1,4) * x(4,1) + b<sub>j</sub><sup>[i]</sup> (1,1)
+a<sub>j</sub><sup>[i]</sup> (1,1) = σ(z<sub>j</sub><sup>[i]</sup> (1,1))
+
+---
+__Vectorizing across multiple examples__
+for i= 1 to m:
+    z<sup>[1]</sup><sup>(i)</sup> = w<sup>[1]</sup>x<sup>(i)</sup>+b<sup>[1]</sup>
+    a<sup>[1]</sup><sup>(i)</sup> = σ(z<sup>[1]</sup><sup>(i)</sup>)
+
+    
+___
+__Activation Functions__
+
+sigmoid function
+![sigmoid](https://th.bing.com/th/id/R.985057b1f28ef2ab7a95c7b84b2d3c06?rik=VY4pa4zaqnQ8og&riu=http%3a%2f%2fronny.rest%2fmedia%2fblog%2f2017%2f2017_08_10_sigmoid%2fsigmoid_plot.jpg&ehk=OailFWoiQZSkaAj6%2bixrAuW0O6fONpHkATXuVOSucBA%3d&risl=&pid=ImgRaw&r=0)
+a = g(z) = 1 / (1 + e<sup>-z</sup>)
+g'(z) = 1 / (1 + e<sup>-z</sup>)*(1-(1 / (1 + e<sup>-z</sup>))
+g'(z) = a(1-a)
+
+tanh function
+![tanh](https://th.bing.com/th/id/OIP.T1fwHZtmc6D2M0k4YZplTgAAAA?pid=ImgDet&rs=1)
+a = g(x) = tanh(x) = e<sup>x</sup> - e<sup>-x</sup> / e<sup>x</sup> + e<sup>-x</sup>
+g'(x) = 1 - g(x)<sup>2</sup>
+
+ReLU activation
+![relu](https://th.bing.com/th/id/OIP.B8muJFerGLcrESvQDgqkrQAAAA?pid=ImgDet&rs=1)
+a = g(z) = max(0,z)
+g'(z) = 
+0 if z <0
+1 if z>=0
+
+Leaky ReLU activation
+![leaky](https://www.i2tutorials.com/wp-content/media/2019/09/Deep-learning-25-i2tutorials.png)
+a = g(x) = max(0.01*x, x)
+g'(x) = 
+0.01 if z < 0
+1 if z >= 0
+
+___
+__Computing derivatives__
+Forward propogation
+z<sup>[1]</sup> = w<sup>[1]</sup>x + b<sup>[1]</sup>
+A<sup>[1]</sup> = g<sup>[1]</sup>(z<sup>[1]</sup>)
+z<sup>[2]</sup> = w<sup>[2]</sup>A<sup>[1]</sup> + b<sup>[2]</sup>
+A<sup>[2]</sup> = g<sup>[2]</sup>(z<sup>[2]</sup>) = σ(z<sup>[2]</sup>)
+
+Backward Propogation
+dz<sup>[2]</sup> = A<sup>[2]</sup> - Y
+Y = $\begin{bmatrix}y^1 y^2 ... y^m\end{bmatrix}$ 
+dw<sup>[2]</sup> = (1/m)*dz<sup>[2]</sup>A<sup>[1]</sup><sup>T</sup>
+
+db<sup>[2]</sup>=(1/m)*np.sum(dz<sup>[2]</sup>, axis=1, keepdims=True)
+
+---
+On initializing weights to zero same values are generated in each layer and does not break symmetry
+
+Therefore we use __Random initialization__
+w<sup>[1]</sup> = np.random.randn((2,2)*0.01
+b<sup>[1]</sup> = np.zeros((2,1))
+
+
+
+
+
