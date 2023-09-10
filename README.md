@@ -278,6 +278,64 @@ w<sup>[1]</sup> = np.random.randn((2,2)*0.01
 b<sup>[1]</sup> = np.zeros((2,1))
 
 
+# Week 4
+One hidden layer neural network
+![one hl NN](https://www.researchgate.net/profile/Quoc_Thong_Nguyen/publication/339004595/figure/fig3/AS:854634243567616@1580772090847/Artificial-neural-network-with-one-hidden-layer.png)
+![two hl NN](https://www.researchgate.net/profile/Daniele-Grattarola/publication/323218981/figure/fig4/AS:594583624884224@1518771191418/A-fully-connected-neural-network-with-two-hidden-layers_Q640.jpg)
+---
+Notation for Deep Neural Network with multiple layers
+![](@attachment/Clipboard_2023-09-09-11-42-35.png)
+L = no. of layers(depth) = 4
+n<sup>[l]</sup> = no. of functions in layer l
+a<sup>[l]</sup> = activations in layer l
+a<sup>[l]</sup> = g<sup>[l]</sup>(z<sup>[l]</sup>)
+W<sup>[l]</sup>, b<sup>[l]</sup> = weights for z<sup>[l]</sup>
+
+n<sup>[l]</sup> = 5, n<sup>[2]</sup> = 5, n<sup>[3]</sup> = 3, n<sup>[4]</sup> = n<sup>[L]</sup> = 1
+
+__Forward Propagation in Deep NN (General formula)__
+
+*for  l=1*
+z<sup>[1]</sup> = W<sup>[1]</sup>X + b<sup>[l]</sup>
+A<sup>[1]</sup> = g<sup>[1]</sup>(Z<sup>[1]</sup>)
+
+*for  l>1*
+z<sup>[l]</sup> = W<sup>[l]</sup>A<sup>[l-1]</sup> + b<sup>[l]</sup>
+A<sup>[l]</sup> = g<sup>[l]</sup>(Z<sup>[l]</sup>)
+
+__Dimensions of different matrices__
+Z<sup>[1]</sup> = (n<sup>[1]</sup>,1) = (3,1)
+W<sup>[1]</sup> = (n<sup>[1]</sup>,n<sup>[0]</sup>) = (3,2)
+x = (n<sup>[0]</sup>,1) = (2,1)
+b<sup>[1]</sup> = (n<sup>[1]</sup>,1) = (3,1)
+
+In General:
+W<sup>[l]</sup> = (n<sup>[l]</sup>,n<sup>[l-1]</sup>)
+b<sup>[l]</sup> = (n<sup>[l]</sup>,1)
+dW<sup>[l]</sup> = (n<sup>[l]</sup>,n<sup>[l-1]</sup>)
+db<sup>[l]</sup> = (n<sup>[l]</sup>,1)
+___
+
+__Building Blocks of Deep NN__
+
+![](@attachment/Clipboard_2023-09-09-12-30-21.png)
+
+large l : w<sup>[l]</sup>, b<sup>[l]</sup>
+Forward : input a<sup>[l-1]</sup>, output a<sup>[l]</sup>
+
+Backward : input : da<sup>[l]</sup>, output da<sup>[l-1]</sup>, dW<sup>[l]</sup>, db<sup>[l]</sup>
+vectorized version
+dz<sup>[l]</sup> = W<sup>[l+1]T</sup>dz<sup>[l+1]</sup>*g<sup>[l]'</sup>(z<sup>[l]</sup>)
+
+cache stores value of Z<sup>[l]</sup> for backward propagating function
+
+___
+__Hyperparameters__
+Parameters : W<sup>[1]</sup>. b<sup>[1]</sup>, W<sup>[2]</sup>. b<sup>[2]</sup>, W<sup>[3]</sup>. b<sup>[3]</sup>
+
+Hyperparameters : learning rate, iterations, hidden layers L, hidden units nW<sup>[1]</sup>, nW<sup>[2]</sup>,..., choice of activation function
+
+Hyperparameters control values of parameters 
 
 
 
