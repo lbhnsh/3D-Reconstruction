@@ -11,10 +11,11 @@ Logistic regression is the method which is used to give a input and we will get 
 
 In symbolic notations is given by 
  𝑥 , 𝑦̂ = 𝑃(𝑦 = 1|𝑥), where 0 ≤ 𝑦̂ ≤ 1
+
 z = wT . x + b
 We use sigmoid function which is given by 
-y_hat = sigmoid(z) = 1/(1+e^-z)
-to calculate the probability.
+
+y_hat = sigmoid(z) = 1/(1+e^-z) to calculate the probability.
 
 Each neuron is assigned which parameters namely weight and bias. Weight is the size of the input and it contains values which can correspond to each input parameter and a bias to be added in the to the matrix multiplication of weight transpose(Wt) and input x, which will be called Z i.e. output of linear operation
 
@@ -37,6 +38,7 @@ We do this with the help of derivative of J(w,b) w.r.t to w and b which is calle
 And we update the values of w and b according to the following
 
 w := w-alpha*(dw)
+
 b := b-alpha*(db)
 
 where alpha is the learning rate and decides the speed at which the updation of values of w and b is going to take place. 
@@ -96,6 +98,7 @@ Now as weights corresponds to all the input parameters in each column, so it wil
 
 Now to calculate the products using vectorization we use 
 Z = np.dot(W.T,X) + b
+
 A = sigmoid(Z)
 
 Here Z is of dimensions (1,m) and A is of dimensions (1,m)
@@ -111,11 +114,13 @@ we know dz = a - y.
 
 So now using it on matrices of m examples we can say,
 dZ = A - Y 
+
 dZ will have same dimensions as A and Y i.e. (1,m)
 
 Now we can calculate X.dZ transpose for all examples using for loop and keep on updating dW by adding all the values to it and then dividing it by m at the end, but we will be using vectorization. 
 
 So we can easily write, 
 dw = (1/m)*np.sum(np.dot(X,dZ.T))
+
 db = (1/m)*np.sum(dZ)
 
