@@ -1,5 +1,5 @@
 **Applied ML is a highly iterative process**
-#WEEK 1:
+# WEEK 1:
 ##Train/ Dev/ Test sets
 Parameters to consider while developing a NN:
 1. no. of layers
@@ -153,7 +153,7 @@ Check should be around 10^-7---> ratio of eucliadian distance
 
 ---------------------------------------------------------------------------
 
-#WEEK 2:
+# WEEK 2:
 ##OPTIMIZATION ALGORITHMS:
 To speed up 
 
