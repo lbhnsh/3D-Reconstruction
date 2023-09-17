@@ -35,15 +35,19 @@ Then when we perform a certain function on it, be it sigmoid or tanh or reLU we 
 
 There are mainly 3 activation functions that we talk about those are 
 
-**i. Sigmoid**
+__**i. Sigmoid**__
+
 Sigmoid function is defined as f(z) = 1/(1+e^(-z)). This will give us a graph which will have asymptotes on values y=0 and y=1 and intersects y axis at y = 0.5. This function flattens extremely when the value of z is very large or very small. This is mostly used when we need to perform binary classification and is used in the final layer to give us a probability. If the probability is above 0.5 then the output will be of label 1 and if not then of label 0.
 
 If f(x) is sigmoid function then derivative of the function i.e. f'(x) = f(x)*(1-f(x))
-**ii. Tanh**
+
+__**ii. Tanh**__
+
 Tanh function is defined as f(z) = (e^(z) - e^(-z))/(e^(z) + e^(-z)). The graph has asymptotes on y = -1 and y =1 and intesects y axis at y =0. Tanh function is preferred over sigmoid as activation function in layers between the deep L network. This is because the values that we will get will have an average value around 0 unlike sigmoid which will have the average value 0, this gives tanh a plus point in computation and optimization. 
 
 If f(x) is tanh function then derivative of the function i.e. f'(x) = 1-(f(x))^2
-**iii. ReLU**
+
+__**iii. ReLU**__
 Relu is simple function which is defined as f(x) = max{0,x} . We face a common problem in both tanh and sigmoid that the values get stagnated and are difficult to change when the input value x is either very large or very small. This is removed by reLu function as it does not have any asymptotes but has a linear relation. ReLU function is mostly used as activation function to train neural layers in neural networks. 
 
 If f(x) is ReLU function then, f'(x) for x>0 is 1 and for x<0 is 0.
@@ -55,11 +59,17 @@ Activation functions are the functions which perform a different function and gi
 ## Gradients in a shallow neural network
 
 If we consider a two layer network having first layer of linear activation and second layer of linear sigmoid activation. Them the gradients will be,
+
 dZ[2] = A[2] - Y
+
 dW[2] = (1/m)\*dZ[2]\*A[1].T
+
 db[2] = (1/m)*sum(dZ[2])
+
 dZ[1] = dW[2].T\*dZ[2]\*g[1]'(z[1])
+
 dW[1] = (1/m)\*dZ[1]\*X.T
+
 db[1] = (1/m)\*sum(dZ[1])
 
 ## Random Weight initialization
