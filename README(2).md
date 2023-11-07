@@ -47,7 +47,7 @@ Indentification of objects from a single RGB input image and generating separate
 
 ## Installations and Preprocessing
 
-Tested on [Ubuntu 20.04](https://ubuntu.com/download/desktop)
+Tested on [Ubuntu 22.04](https://ubuntu.com/download/desktop)
 
 [YOLOv8 with YOLO-SAM](https://blog.roboflow.com/how-to-use-yolov8-with-sam/)
 
