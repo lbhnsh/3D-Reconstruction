@@ -1,1 +1,15 @@
+pip install roboflow ultralytics
+
+!{sys.executable} -m pip install 'git+https://github.com/facebookresearch/segment-anything.git'
+!wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+
+rf = Roboflow(api_key="API key")
+project = rf.workspace("vkr-v2").project("vkrrr")
+dataset = project.version(5).download("yolov8")
+
+
+#YOLO installation
+from ultralytics import YOLO
+model = YOLO('yolov8n.pt')
+
 
