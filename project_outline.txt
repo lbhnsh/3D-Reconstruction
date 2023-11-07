@@ -1,0 +1,58 @@
+﻿3D Reconstruction From Single RGB Image
+0. Introduction:
+1. team(project) name, mentor name, mentee names
+2. What is 3d reconstruction
+3. What should be the input, what do u expect as output
+4. What is the state of the art right now? It is either compatible for transparent background and single object images 
+i) shapenet dataset
+or even if multi object image is passed through it , it only outputs a mesh of a single object
+ii) pix3d -> mesh r cnn
+5. Open3D library : 
+What does it offer?
+i) point clouds
+ii) meshes (triangular and polygon) <- getting back to this later
+iii) scene reconstruction
+
+
+1. Simple Open3D approach
+1. Point Cloud (RGBD image): 
+i) How to find the D part of RGBD?
+ii) About MiDaS
+iii) Problems with MiDas (inverse depth map)
+*  even if we invert the depth map, the output doesn’t actually reconstruct as expected *  
+2.  Point Cloud: Masking and Concatenation 
+i) GrabCut 
+ii) Panoptic Segmentation and Auto masking (applied this for both RGB and D)
+iii) Created PCD from RGBD of masks and concatenated
+                        *  drawbacks *
+3. Meshes in Open3D are awfully bad
+
+
+2. Neural Network Part        
+1. Meshes: Here comes the Neural Network part
+i) Pixel2Mesh: Shapenet dataset: 
+Drawbacks: only worked on trained images and even slightly different image couldn’t be rendered, not for real life images
+ii) Explaining basis for our architecture: Pixel2Mesh
+iii) Mesh RCNN:
+Current inputs and outputs
+What we modified
+
+
+3. Mesh RCNN
+1. Architecture
+2. 2D backbone Masked RCNN -> detectron2
+3. 3D part -> pytorch3d
+4. Project Approach
+1. As it is approach gives garbage masks and thus inaccurate meshes
+2. We pass masks 
+                i) Segmentation Model
+                ii) Object Detection Model 
+3. Inference runs
+4. Merging Meshes (included in Inference)
+
+
+5. Future Prospects
+1. Find a better dataset or create it  
+2. Train on that dataset 
+3. Why we couldn’t implement it now ( GPU constraints )
+Mentor: Soham Mulye                Mentees: Labhansh  Naik, Mrudul Pawar, Param Parekh
