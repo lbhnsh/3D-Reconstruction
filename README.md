@@ -5,11 +5,11 @@
 Indentification of objects from a single RGB input image and generating separate masked images using YOLOv8 and YOLO-SAM architectures, generating 3-dimensional mesh using MeshRCNN for every masked image and concatenating them based on their x, y and relative z space co-ordinates to generate a 3D-reconstruction of the scene.
 
 ### Input Image:
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/results2/model_input2.jpg?raw=true)
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result2/model_input2.jpg?raw=true)
 
 
 ### Output:
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/model_output2.gif?raw=true)
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result2/model_output2.gif?raw=true)
 
 
 
@@ -28,25 +28,25 @@ Indentification of objects from a single RGB input image and generating separate
 ## About the Project:
 
 ### Process Flow
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/Screenshot%20from%202023-11-08%2016-31-28.png?raw=true)
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/workflow.jpg?raw=true)
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Param-Parekh/Screenshot%20from%202023-11-08%2002-50-38.png?raw=true)
 
 
 1. Model takes RGB image as input in .jpg or .png file format 
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/final_results/input1.jpg?raw=true)
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/input1.jpg?raw=true)
 
 2. Panoptic segmentation: 
  In semantic segmentation, all images of a pixel belong to a specific class. In instance segmentation, each object gets a unique identifier and appears as an extension of semantic segmentation. Panoptic Segmentation combines the merits of both approaches and distinguishes different objects to identify separate instances of each kind of object in the input image.
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/final_results/segmented_image.png?raw=true)
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_image.png?raw=true)
    2.I. Generation of separate mask for every instance. Save only instances of those classes on which model is trained
-     ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/segmented_rgb_images/segment_rgb_121_2.png?raw=true) 
-      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
+     ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_2.png?raw=true) 
+      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
    2.II. Make mesh for every mask using MeshRCNN
       MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. *Inference can be run on Colab T4 GPU*
-      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/final_results/sofa.gif?raw=true)
-      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/final_results/table.gif?raw=true)
+      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/sofa.gif?raw=true)
+      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/table.gif?raw=true)
    2.III. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
-   ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/final_results/model_output1.gif?raw=true)
+   ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/model_output1.gif?raw=true)
 
 ## File Structure
 ```
