@@ -26,7 +26,7 @@ The model takes a single RGB image as input and attempts at creating a 3D mesh o
 
 ## About the Project:
 
-Our Approach consists of first performaing Panoptic Segmentation on the given image. This step associates distinct objects present in the scene with different hues. This association of objects with defined hues is then used to create masks of those object from the input RGB Image.
+Our Approach consists of first performing Panoptic Segmentation on the given image. This step associates distinct objects present in the scene with different hues. This association of objects with defined hues is then used to create masks of those object from the input RGB Image.
 
 We create masks in order to aid the Mask-RCNN modality which is responsible to create masks for the objects present and then Mesh-RCNN creates mesh of the important objects present in the image. 
 
