@@ -26,6 +26,12 @@ The model takes a single RGB image as input and attempts at creating a 3D mesh o
 
 ## About the Project:
 
+Our Approach consists of first performaing Panoptic Segmentation on the given image. This step associates distinct objects present in the scene with different hues. This association of objects with defined hues is then used to create masks of those object from the input RGB Image.
+
+We create masks in order to aid the Mask-RCNN modality which is responsible to create masks for the objects present and then Mesh-RCNN creates mesh of the important objects present in the image. 
+
+After the meshes are produced, they are then concatenated together in order to reconstruct the complete 3D Scene. Concatenation should result in the meshes being perfectly aligned with each other and with the camera as present in the input RGB image
+
 ### Process Flow
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/workflow.jpg?raw=true)
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Param-Parekh/Screenshot%20from%202023-11-08%2002-50-38.png?raw=true)
