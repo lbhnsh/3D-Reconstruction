@@ -3,7 +3,7 @@
 ## Project:
 The model takes a single RGB image as input and attempts at creating a 3D mesh of the scene visible in the image by the methods of panoptic segmentation, masking, Mesh R CNN and then concatenation of alignment aware meshes to present the output.
 
-### Input Image:
+### Input Image: 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result2/model_input2.jpg?raw=true)
 
 
