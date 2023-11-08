@@ -27,7 +27,8 @@ In semantic segmentation, all images of a pixel belong to a specific class. In i
       
       ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Param-Parekh/object_segmentation/panoptic.png?raw=true)
    3. Make mesh for every mask using MeshRCNN
-   4. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
+      MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. It was run on Colab T4 GPU
+   5. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/model_output2.gif?raw=true)
    
 
