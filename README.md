@@ -77,7 +77,7 @@ Cloning into device
 
 ```git clone https://github.com/lbhsnh/3D-Reconstruction.git```
 ```cd 3D-Reconstruction```
-```pip install requirements.txt```
+```pip install -r requirements.txt```
 
 In order the create the masks first 
 ```cd/scripts/ ```
