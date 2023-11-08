@@ -22,26 +22,7 @@ Indentification of objects from a single RGB input image and generating separate
 
 ## About the Project
 
-The idea is to recreate 2D image into 3D object file with multiple angle of views. Different approaches undertaken :
 
-* From Depth map
-   1. Depth map generation from RGB image using MiDaS model
-   Recurrent Neural Network based feature-extracting model which computes relative depth-coordinate for each pixel
-   ![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/final_results/midas_depthmap.png?raw=True)
-
-   3. Point cloud generation from RGB image and depth map using Open3D on VS code.
-   ![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/pointcloud/pointcloud.gif?raw=true)
-
-   4. Mesh generation using Pixel2Mesh 
-   However mesh generation by Pixel2Mesh. Major issue faced was improper training over older and not updated weights. Also it has angle of vision limitations while working with single image input.
-
-* Using YOLO
-   1. Object detection using YOLOv8 and simultaneously separated mask generation using YOLO-SAM. YOLO is a convolutional neural network working with one step object detection. There are 24 convolutional layers followed by 2 fully connected layers. Alternate 1X1 convolutional layers reduce dimensions while increasing number of feature channels. This occurs in small segments at a time iterated over entire image area of 224X224 px. YOLO was run on Colab T4 GPU
-
-   2. Mesh generation for each masked object using MeshRCNN
-   MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. It was run on Colab T4 GPU
-   
-   3. Concatenation of meshes into one object file using Open3D functions
 
    
 
