@@ -35,12 +35,6 @@ After the meshes are produced, they are then concatenated together in order to r
 
 We've used ShapeNet Dataset which contains huge CAD amounts of model from diverse categories. This dataset is standard when it comes to ML model building for 3D applications. We've also evaluated our model on the challenging dataset of Pix3D. This dataset consists of real life images and models of objects which are aligned with the image provided making it a one of a kind dataset, as it helps yield reasonable output even when challenged with real-life images.
 
-
-
-We create masks in order to aid the Mask-RCNN modality which is responsible to create masks for the objects present and then Mesh-RCNN creates mesh of the important objects present in the image. 
-
-After the meshes are produced, they are then concatenated together in order to reconstruct the complete 3D Scene. Concatenation should result in the meshes being perfectly aligned with each other and with the camera as present in the input RGB image
-
 ### Process Flow
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/workflow.jpg?raw=true)
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Param-Parekh/Screenshot%20from%202023-11-08%2002-50-38.png?raw=true)
