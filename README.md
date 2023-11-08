@@ -13,8 +13,10 @@ The model takes a single RGB image as input and attempts at creating a 3D mesh o
 
 
 ## Table of Contents
+* [About the Project](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#about-the-project)
 * [Process Flow](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#process-flow)
 * [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#file-structure)
+* [Architecture and Dataset](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#architecture-and-dataset)
 * [Installations and Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-execution)
 * [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#results)
 * [Tech Stack](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#tech-stack)
@@ -77,6 +79,14 @@ MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional n
  ┣ 📜project_report.docx               # Project Report
  ┗ 📜requirements.txt                  # Requirements
 ``` 
+## Architecture and Dataset
+
+The Mesh that gets generated from the masked image is done on the basis of the [Mesh RCNN](https://arxiv.org/pdf/1906.02739.pdf) architecture
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/MeshRCNNarch.png?raw=true)
+
+It has been trained upon Pix3D dataset
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/pix3d.png?raw=true)
+
 
 ## Installations and Execution
 
