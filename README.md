@@ -89,6 +89,8 @@ Cloning into device
 
 ```cd 3D-Reconstruction```
 
+**Create a virtual env for the project**
+
 ```pip install requirements.txt```
 
 ```cd scripts```
