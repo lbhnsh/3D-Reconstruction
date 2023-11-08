@@ -36,38 +36,42 @@ After the meshes are produced, they are then concatenated together in order to r
 We've used ShapeNet Dataset which contains huge CAD amounts of model from diverse categories. This dataset is standard when it comes to ML model building for 3D applications. We've also evaluated our model on the challenging dataset of Pix3D. This dataset consists of real life images and models of objects which are aligned with the image provided making it a one of a kind dataset, as it helps yield reasonable output even when challenged with real-life images.
 
 ### Process Flow
+
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/workflow.jpg?raw=true)
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Param-Parekh/Screenshot%20from%202023-11-08%2002-50-38.png?raw=true)
 
 
-1. Model takes RGB image as input in .jpg or .png file format 
+1. **Input**: The complete model will have the input in the form of a single RGB image. The image file can be in .jpg or .png file format. 
 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/input1.jpg?raw=true)
 
-2. Panoptic segmentation: 
 
-In semantic segmentation, all images of a pixel belong to a specific class. In instance segmentation, each object gets a unique identifier and appears as an extension of semantic segmentation. Panoptic Segmentation combines the merits of both approaches and distinguishes different objects to identify separate instances of each kind of object in the input image.
+2. **Panoptic segmentation:** For the given image with our ML Model, panoptic segmentation will be applied on the given input image. As Panoptic Segmentation is the combination of instance segmentation as well as semantic segmentation, we get the regions of the objects present but as well as the distinct regions  different classification of objects present in the scene
 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_image.png?raw=true)
 
 
-2.I. Generation of separate mask for every instance. Save only instances of those classes on which model is trained
+3. **Generation of masks**: With the help of the regions obtained by the Panoptic Segmentation, we then move towards generating masks of the distinct object instances present in the image. We perform this step specially to aid the formation of better masks by the Mask RCNN which is the primary input for the Mesh Modality which creates mesh for individual objects. 
+
+Generation of separate mask for every instance. Save only instances of those classes on which model is trained
 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_2.png?raw=true) 
       
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
    
-2.II. Make mesh for every mask using MeshRCNN
-      
-MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. *Inference can be run on Colab T4 GPU*
+4. **Generation of individual mesh**: By the now obtained refined and accurate masks of the the objects, mesh are created singular objects by the mesh formation block applied in Mesh RCNN. A rough voxel grid is first formed for the image and which is then refined by Mesh Refinement, following a coarse-to-fine approach which creates an ideal mesh. 
+
+   
+*Inference can be run on Colab T4 GPU*
       
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/sofa.gif?raw=true)
 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/table.gif?raw=true)
    
-2.III. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
+5. **Concatenation of meshes**: We use the functions offered by the Open3D library in order to achieve the final mesh. The final mesh consists of all the previous individual meshes aligned with each other and with the camera as present in the input image.
    
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/model_output1.gif?raw=true)
+   
 
 ## File Structure
 ```
