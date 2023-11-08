@@ -95,11 +95,11 @@ Tested on [Ubuntu 20.04](https://ubuntu.com/download/desktop)
 ## File Structure
 
 * [instance_segmentation.py](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/instance_segmentation.py)
-   * [segment_and_mask.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/demo/segment_and_mask.py)
-   * [contour_based_segmentation.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/scripts/contour_based_segmentation.py)
-* [inference.ipynb](https://github.com/lbhnsh/3D-Reconstruction/blob/main/demo/inference.ipynb)
-* [visualize_obj.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/scripts/visualize_obj.py)
-* [download_images.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/scripts/download_images.py)
+   * [segment_and_mask.py](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/segment_and_mask.py)
+   * [contour_based_segmentation.py](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/contour_based_segmentation.py)
+* [inference.ipynb](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/inference.ipynb)
+* [visualize_obj.py](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/visualize_obj.py)
+* [download_images.py](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/download_images.py)
 
 ## Execution
 
