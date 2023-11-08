@@ -28,9 +28,11 @@ The idea is to recreate 2D image into 3D object file with multiple angle of view
    1. Depth map generation from RGB image using MiDaS model
    Recurrent Neural Network based feature-extracting model which computes relative depth-coordinate for each pixel
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/final_results/midas_depthmap.png?raw=True)
-   2. Point cloud generation from RGB image and depth map using Open3D on VS code.
+
+   3. Point cloud generation from RGB image and depth map using Open3D on VS code.
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/pointcloud/pointcloud.gif?raw=true)
-   3. Mesh generation using Pixel2Mesh 
+
+   4. Mesh generation using Pixel2Mesh 
    However mesh generation by Pixel2Mesh. Major issue faced was improper training over older and not updated weights. Also it has angle of vision limitations while working with single image input.
 
 * Using YOLO
@@ -154,7 +156,7 @@ To view .obj file
 
 ## Contributors
 
-* Labhansh Naik
+* [Labhansh Naik](https://github.com/lbhnsh)
 * [Param Parekh](https://github.com/Param1304)
 * [Mrudul Pawar](https://github.com/Mr-MVP)
 
