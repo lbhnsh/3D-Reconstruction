@@ -76,12 +76,17 @@ Run this [colab file](https://colab.research.google.com/drive/1sJprm_bDMixJBbAY3
 Cloning into device 
 
 ```git clone https://github.com/lbhsnh/3D-Reconstruction.git```
+
 ```cd 3D-Reconstruction```
+
 ```pip install -r requirements.txt```
+
 
 In order the create the masks first 
 ```cd/scripts/ ```
+
 ```python3 segment_and_mask.py```
+
 
 To create final mesh from the created masks, use inference.ipynb notebook present. 
 
