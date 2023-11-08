@@ -18,7 +18,7 @@ The model takes a single RGB image as input and attempts at creating a 3D mesh o
 * [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#file-structure)
 * [Architecture and Dataset](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#architecture-and-dataset)
 * [Installations and Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-execution)
-* [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#results)
+* [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/demo_video.gif)
 * [Tech Stack](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#tech-stack)
 * [Future Prospects](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#future-prospects)
 * [Contributors](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#contributors)
@@ -126,11 +126,7 @@ You can use Open3d to view the saved mesh or use :
 
 [Online 3D Viewer](https://3dviewer.net/)
 
-## Results
 
-Demo Video of Output:
-
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/demo_vido.gif?raw=true)
 
 ## Tech Stack
 
