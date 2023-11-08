@@ -34,18 +34,28 @@ Indentification of objects from a single RGB input image and generating separate
 
 1. Model takes RGB image as input in .jpg or .png file format 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/input1.jpg?raw=true)
-
-2. Panoptic segmentation: 
+&nbsp;
+2. Panoptic segmentation:
+   &nbsp;
  In semantic segmentation, all images of a pixel belong to a specific class. In instance segmentation, each object gets a unique identifier and appears as an extension of semantic segmentation. Panoptic Segmentation combines the merits of both approaches and distinguishes different objects to identify separate instances of each kind of object in the input image.
+
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_image.png?raw=true)
+&nbsp;
    2.I. Generation of separate mask for every instance. Save only instances of those classes on which model is trained
      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_2.png?raw=true) 
-      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
+     &nbsp;
+   ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
+     &nbsp;
+   
    2.II. Make mesh for every mask using MeshRCNN
+   &nbsp;
       MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. *Inference can be run on Colab T4 GPU*
+      &nbsp;
       ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/sofa.gif?raw=true)
       ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/table.gif?raw=true)
+      &nbsp;
    2.III. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
+   &nbsp;
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/model_output1.gif?raw=true)
 
 ## File Structure
@@ -83,6 +93,7 @@ Cloning into device
 
 
 In order the create the masks first 
+&nbsp;
 ```cd/scripts/ ```
 
 ```python3 segment_and_mask.py```
