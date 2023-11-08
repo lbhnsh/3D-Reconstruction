@@ -1,0 +1,7 @@
+numpy
+matplotlib
+ultralytics
+cv2
+sys
+PIL
+open3d
