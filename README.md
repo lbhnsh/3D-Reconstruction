@@ -5,7 +5,7 @@
 Indentification of objects from a single RGB input image and generating separate masked images using YOLOv8 and YOLO-SAM architectures, generating 3-dimensional mesh using MeshRCNN for every masked image and concatenating them based on their x, y and relative z space co-ordinates to generate a 3D-reconstruction of the scene.
 
 ### Input Image:
-![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/model_input2.jpg?raw=true)
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/results2/model_input2.jpg?raw=true)
 
 
 ### Output:
