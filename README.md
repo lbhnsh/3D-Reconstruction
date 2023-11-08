@@ -66,14 +66,9 @@ In semantic segmentation, all images of a pixel belong to a specific class. In i
 
 Tested on [Ubuntu 20.04](https://ubuntu.com/download/desktop)
 
-
 [MeshRCNN](https://github.com/facebookresearch/meshrcnn)
 
-[segment-anything](https://github.com/facebookresearch/segment-anything)
-
-[numpy v1.21.6](https://numpy.org/)
-
-[matplotlib v3.1.3](https://matplotlib.org/)
+[PyTorch3D](https://pytorch3d.org/#quickstart)
 
 [Open3D v0.17.0](http://www.open3d.org/docs/release/getting_started.html)
 
