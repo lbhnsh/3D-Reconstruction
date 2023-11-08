@@ -15,8 +15,7 @@ The model takes a single RGB image as input and attempts at creating a 3D mesh o
 ## Table of Contents
 * [Process Flow](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#process-flow)
 * [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#file-structure)
-* [Installations and preprocessing](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-preprocessing)
-* [Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#execution)
+* [Installations and Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-preprocessing)
 * [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#results)
 * [Tech Stack](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#tech-stack)
 * [Future Prospects](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#future-prospects)
@@ -70,7 +69,7 @@ MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional n
 ```
 📦3D-Reconstruction 
  ┣ 📂assets                            # Contains gifs, objs and images of the results 
- ┣ 📂scripts                           # C++ program used to run the drone
+ ┣ 📂scripts                           # Python programs to run 
  ┃ ┣ segment_and_mask.py               # Used to create and save masks of objects from input image
  ┃ ┣ inference.ipynb                   # Run this notebook to get results
  ┣ 📜README.md
@@ -79,15 +78,10 @@ MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional n
  ┗ 📜requirements.txt                  # Requirements
 ``` 
 
-## Installations and Preprocessing
+## Installations and Execution
 
 Project was tested on Ubuntu 22.04 and T4 GPU offered by Google Colab
 
-```pip install requirements.txt```
-
-Rest all dependencies will be taken care of by the scripts
-
-## Executing the Demo / Inference
 
 Cloning into device 
 
@@ -98,6 +92,8 @@ Cloning into device
 **Create a virtual env for the project**
 
 ```pip install requirements.txt```
+
+Rest all dependencies will be taken care of by the scripts
 
 ```cd scripts```
 
