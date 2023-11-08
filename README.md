@@ -82,9 +82,11 @@ MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional n
 ## Architecture and Dataset
 
 The Mesh that gets generated from the masked image is done on the basis of the [Mesh RCNN](https://arxiv.org/pdf/1906.02739.pdf) architecture
+
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/MeshRCNNarch.png?raw=true)
 
-It has been trained upon Pix3D dataset
+It has been trained upon [Pix3D](http://pix3d.csail.mit.edu/) dataset
+
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/pix3d.png?raw=true)
 
 
