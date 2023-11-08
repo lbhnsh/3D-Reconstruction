@@ -55,7 +55,7 @@ In semantic segmentation, all images of a pixel belong to a specific class. In i
 ## Table of Contents
 * [Tech Stack](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#tech-stack)
 * [Installations and preprocessing](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-preprocessing)
-* [Process Flow](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(2).md#process-flow)
+* [Process Flow](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#process-flow)
 * [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#file-structure)
 * [Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#execution)
 * [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#results)
