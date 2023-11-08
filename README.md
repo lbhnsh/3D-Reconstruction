@@ -94,7 +94,7 @@ Tested on [Ubuntu 20.04](https://ubuntu.com/download/desktop)
 
 ## File Structure
 
-* [instance_segmentation.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/scripts/instance_segmentation.py)
+* [instance_segmentation.py](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/scripts/instance_segmentation.py)
    * [segment_and_mask.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/demo/segment_and_mask.py)
    * [contour_based_segmentation.py](https://github.com/lbhnsh/3D-Reconstruction/blob/main/scripts/contour_based_segmentation.py)
 * [inference.ipynb](https://github.com/lbhnsh/3D-Reconstruction/blob/main/demo/inference.ipynb)
