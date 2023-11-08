@@ -15,7 +15,7 @@ The model takes a single RGB image as input and attempts at creating a 3D mesh o
 ## Table of Contents
 * [Process Flow](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#process-flow)
 * [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#file-structure)
-* [Installations and Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-preprocessing)
+* [Installations and Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-execution)
 * [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#results)
 * [Tech Stack](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#tech-stack)
 * [Future Prospects](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#future-prospects)
