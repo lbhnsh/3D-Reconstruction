@@ -1,8 +1,7 @@
 # 3D-Reconstruction from Single RGB Image
 
 ## Project:
-
-Indentification of objects from a single RGB input image and generating separate masked images using YOLOv8 and YOLO-SAM architectures, generating 3-dimensional mesh using MeshRCNN for every masked image and concatenating them based on their x, y and relative z space co-ordinates to generate a 3D-reconstruction of the scene.
+The model takes a single RGB image as input and attempts at creating a 3D mesh of the scene visible in the image by the methods of panoptic segmentation, masking, Mesh R CNN and then concatenation of alignment aware meshes to present the output.
 
 ### Input Image:
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result2/model_input2.jpg?raw=true)
@@ -33,29 +32,32 @@ Indentification of objects from a single RGB input image and generating separate
 
 
 1. Model takes RGB image as input in .jpg or .png file format 
+
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/input1.jpg?raw=true)
-&nbsp;
-2. Panoptic segmentation:
-   &nbsp;
- In semantic segmentation, all images of a pixel belong to a specific class. In instance segmentation, each object gets a unique identifier and appears as an extension of semantic segmentation. Panoptic Segmentation combines the merits of both approaches and distinguishes different objects to identify separate instances of each kind of object in the input image.
+
+2. Panoptic segmentation: 
+
+In semantic segmentation, all images of a pixel belong to a specific class. In instance segmentation, each object gets a unique identifier and appears as an extension of semantic segmentation. Panoptic Segmentation combines the merits of both approaches and distinguishes different objects to identify separate instances of each kind of object in the input image.
 
 ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_image.png?raw=true)
-&nbsp;
-   2.I. Generation of separate mask for every instance. Save only instances of those classes on which model is trained
-     ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_2.png?raw=true) 
-     &nbsp;
-   ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
-     &nbsp;
+
+
+2.I. Generation of separate mask for every instance. Save only instances of those classes on which model is trained
+
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_2.png?raw=true) 
+      
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/segmented_rgb_images/segment_rgb_121_4.png?raw=true)
    
-   2.II. Make mesh for every mask using MeshRCNN
-   &nbsp;
-      MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. *Inference can be run on Colab T4 GPU*
-      &nbsp;
-      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/sofa.gif?raw=true)
-      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/table.gif?raw=true)
-      &nbsp;
-   2.III. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
-   &nbsp;
+2.II. Make mesh for every mask using MeshRCNN
+      
+MeshRCNN predicts and aligns 3D-voxelised models using graphical convolutional network. *Inference can be run on Colab T4 GPU*
+      
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/sofa.gif?raw=true)
+
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/table.gif?raw=true)
+   
+2.III. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
+   
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/assets/result1/model_output1.gif?raw=true)
 
 ## File Structure
@@ -75,13 +77,11 @@ Indentification of objects from a single RGB input image and generating separate
 
 Project was tested on Ubuntu 22.04 and T4 GPU offered by Google Colab
 
-[Open3d (Build from Source)](http://www.open3d.org/docs/release/compilation.html)
-Following this installation would suffice all the requirements for this project.
+```pip install requirements.txt```
 
-Run this [colab file](https://colab.research.google.com/drive/1sJprm_bDMixJBbAY38UxcsgAz5hkxPza?usp=sharing) and it will handle all the installation of the requirements
+Rest all dependencies will be taken care of by the scripts
 
-
-## Execution
+## Executing the Demo / Inference
 
 Cloning into device 
 
@@ -89,33 +89,31 @@ Cloning into device
 
 ```cd 3D-Reconstruction```
 
-```pip install -r requirements.txt```
+```pip install requirements.txt```
 
-
-In order the create the masks first 
-&nbsp;
-```cd/scripts/ ```
+```cd scripts```
 
 ```python3 segment_and_mask.py```
 
+```then run the colab file inference.ipynb```
 
-To create final mesh from the created masks, use inference.ipynb notebook present. 
 
-To view .obj file 
+* To view .obj file
+  
+You can use Open3d to view the saved mesh or use :
 
 [Online 3D Viewer](https://3dviewer.net/)
 
 
 ## Tech Stack
 
-[Open3D](http://www.open3d.org/docs/release/getting_started.html)
+* Open3D
 
-[Pytorch3D](https://github.com/facebookresearch/pytorch3d)
-
-[Detectron2](https://github.com/facebookresearch/detectron2)
-
-[Ultralytics](https://github.com/ultralytics/ultralytics)
-
+* Pytorch3D
+  
+* Detectron2
+  
+* Ultralytics
 
 
 ## Future Prospects
@@ -136,16 +134,6 @@ To view .obj file
 
 ## Acknowledgements and Resources
 
-[Pixel2Mesh](https://openaccess.thecvf.com/content_ECCV_2018/papers/Nanyang_Wang_Pixel2Mesh_Generating_3D_ECCV_2018_paper.pdf)
-
-[Depth-aware Pixel2Mesh](http://cs231n.stanford.edu/reports/2022/pdfs/167.pdf) 
-
-[Holistic 3D scene Understanding](https://arxiv.org/pdf/2103.06422v3.pdf)
-
-
-
-[Deep Learning Specialization- Andrew Ng (Course 1, 2, 3 ,4 )](https://www.coursera.org/programs/vjti-cse-learning-program-batch-2022-2026-br5qt/specializations/deep-learning)
-
 [Open 3D library documentation](http://www.open3d.org/docs/release/)
 
 [Pixel2Mesh Paper by Nanyang Wang et al](https://openaccess.thecvf.com/content_ECCV_2018/papers/Nanyang_Wang_Pixel2Mesh_Generating_3D_ECCV_2018_paper.pdf)
@@ -155,12 +143,7 @@ For Image Segmentation Methods
 * https://huggingface.co/docs/transformers/main/en/model_doc/maskformer 
 * https://huggingface.co/blog/mask2former 
 
-[YOLOv8 with YOLO-SAM](https://blog.roboflow.com/how-to-use-yolov8-with-sam/)
-
-[Pytorch implementation of Pixel2Mesh](https://github.com/noahcao/Pixel2Mesh)
-
 [Mesh R CNN by Justin Johnson et al](https://arxiv.org/pdf/1906.02739.pdf)
 
-[Pytorch3D documentation](https://pytorch3d.org/docs/why_pytorch3d.html)
 
 [Detectron2](https://github.com/facebookresearch/detectron2)
