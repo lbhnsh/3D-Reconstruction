@@ -56,12 +56,12 @@ In semantic segmentation, all images of a pixel belong to a specific class. In i
 * [Tech Stack](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#tech-stack)
 * [Installations and preprocessing](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#installations-and-preprocessing)
 * [Process Flow](https://github.com/lbhnsh/3D-Reconstruction/tree/Final#process-flow)
-* [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#file-structure)
-* [Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#execution)
-* [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#results)
-* [Future Work](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(3).md#future-work)
-* [Contributors](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(4).md#contributors)
-* [Acknowledgements and Resources](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README(2).md#acknowledgements-and-resources)
+* [File Structure](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#file-structure)
+* [Execution](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#execution)
+* [Results](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#results)
+* [Future Work](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#future-work)
+* [Contributors](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#contributors)
+* [Acknowledgements and Resources](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/README.md#acknowledgements-and-resources)
 
 
 ## Tech Stack
