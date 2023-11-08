@@ -126,6 +126,11 @@ You can use Open3d to view the saved mesh or use :
 
 [Online 3D Viewer](https://3dviewer.net/)
 
+## Results
+
+Demo Video of Output:
+
+![](https://github.com/lbhnsh/3D-Reconstruction/blob/Final/demo_vido.gif?raw=true)
 
 ## Tech Stack
 
