@@ -21,16 +21,13 @@ Indentification of objects from a single RGB input image and generating separate
 
 
 ## About the Project
-
-
-
-   
-
-* Using Panoptic segmentation
+Panoptic segmentation: 
 In semantic segmentation, all images of a pixel belong to a specific class. In instance segmentation, each object gets a unique identifier and appears as an extension of semantic segmentation. Panoptic Segmentation combines the merits of both approaches and distinguishes different objects to identify separate instances of each kind of object in the input image.
    1. Generation of separate mask for every instance. Save only instances of those classes on which model is trained
-   2. Make mesh for every mask using MeshRCNN
-   3. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
+      
+      ![](https://github.com/lbhnsh/3D-Reconstruction/blob/Labhansh-Naik/segmented_image.png?raw=true)
+   3. Make mesh for every mask using MeshRCNN
+   4. Merge meshes into one object file according to alignment of x-, y- and z- axes in RGBD plane
    ![](https://github.com/lbhnsh/3D-Reconstruction/blob/main/model_output2.gif?raw=true)
    
 
