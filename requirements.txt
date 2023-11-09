@@ -1,6 +1,8 @@
 numpy
 matplotlib
 ultralytics
+torch
+transformers
 cv2
 sys
 PIL
